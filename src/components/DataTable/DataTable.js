@@ -66,9 +66,11 @@ const DataTable = (props) => {
       >
         <Box component="div">
           <Button
+            role="button"
             variant="contained"
             style={{ margin: "0 5px 0 0" }}
             onClick={props.action}
+            data-testid="writeData"
           >
             Write Data On Chain
           </Button>
@@ -88,7 +90,7 @@ const DataTable = (props) => {
     );
   };
 
-  if (props.transactions.length > 0 && !loading) {
+  if (props.transactions?.length > 0 && !loading) {
     return (
       <div style={{ height: 400, width: "100%" }}>
         <DataGrid

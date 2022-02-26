@@ -143,7 +143,10 @@ const Navbar = () => {
             </Button>
           ) : (
             <Link to="/" style={{ textDecoration: "none" }}>
-              <Button sx={{ my: 2, color: "white", display: "block" }}>
+              <Button
+                name="login"
+                sx={{ my: 2, color: "white", display: "block" }}
+              >
                 Login
               </Button>
             </Link>

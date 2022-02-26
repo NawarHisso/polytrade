@@ -23,6 +23,7 @@ const DataModal = (props, ref) => {
 
   return (
     <Modal
+      data-testid="dataModal"
       aria-labelledby="transition-modal-title"
       aria-describedby="transition-modal-description"
       open={open}

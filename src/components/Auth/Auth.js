@@ -8,17 +8,15 @@ import { GoogleLogin } from "react-google-login";
 import Icon from "./Icon";
 import { CONFIG } from "../../constants";
 import { googleLogin } from "../../actions/auth";
-import { useLocation } from "react-router-dom";
 
 const Auth = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const location = useLocation();
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("profile");
     if (isLoggedIn) history.push("/storage");
-  }, [location, history]);
+  }, [history]);
 
   const googleSuccess = async (res) => {
     dispatch(googleLogin(res, history));
@@ -36,6 +34,7 @@ const Auth = () => {
           clientId={CONFIG.GOOGLE_CLIENT_ID}
           render={(renderProps) => (
             <Button
+              data-testid="googleLogin"
               variant="contained"
               size="small"
               onClick={renderProps.onClick}
