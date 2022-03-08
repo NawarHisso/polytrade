@@ -18,6 +18,8 @@ const Auth = () => {
     if (isLoggedIn) history.push("/storage");
   }, [history]);
 
+  //Just a comment to test
+
   const googleSuccess = async (res) => {
     dispatch(googleLogin(res, history));
   };
